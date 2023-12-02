@@ -1,6 +1,5 @@
 #!/bin/bash
 # Singbox一键安装vless+reality
-# Author: Slotheve<https://slotheve.com>
 
 
 RED="\033[31m"
@@ -135,7 +134,7 @@ getVersion() {
     VER=v`/usr/local/bin/sing-box version|head -n1 | awk '{print $3}'`
     RETVAL=$?
     CUR_VER="$(normalizeVersion "$(echo "$VER" | head -n 1 | cut -d " " -f2)")"
-    TAG_URL="https://api.github.com/repos/SagerNet/sing-box/releases/latest"
+    TAG_URL="https://api.github.com/repos/xxf185/sing-box/releases/latest"
     NEW_VER_V="$(normalizeVersion "$(curl -s "${TAG_URL}" --connect-timeout 10| grep -Eo '\"tag_name\"(.*?)\",' | cut -d\" -f4)")"
 	NEW_VER=`curl -s "${TAG_URL}" --connect-timeout 10| grep -Eo '\"tag_name\"(.*?)\",' | cut -d\" -f4 | awk -F 'v' '{print $2}'`
 
@@ -254,7 +253,7 @@ installSingBox() {
 	archAffix
 	rm -rf /tmp/sing-box
 	mkdir -p /tmp/sing-box
-	DOWNLOAD_LINK="https://github.com/SagerNet/sing-box/releases/download/${NEW_VER_V}/sing-box-${NEW_VER}-linux-${ARCH}.tar.gz"
+	DOWNLOAD_LINK="https://github.com/xxf185/sing-box/releases/download/${NEW_VER_V}/sing-box-${NEW_VER}-linux-${ARCH}.tar.gz"
 	colorEcho $BLUE " 下载SingBox: ${DOWNLOAD_LINK}"
 	wget -O /tmp/sing-box/sing-box.tar.gz ${DOWNLOAD_LINK}
 	if [ $? != 0 ];then
@@ -547,26 +546,18 @@ showLog() {
 
 menu() {
 	clear
-	echo "####################################################"
-	echo -e "#          ${RED}Singbox一键安装vless+reality${PLAIN}            #"
-	echo -e "# ${GREEN}作者${PLAIN}: 怠惰(Slotheve)                             #"
-	echo -e "# ${GREEN}网址${PLAIN}: https://slotheve.com                       #"
-	echo -e "# ${GREEN}频道${PLAIN}: https://t.me/SlothNews                     #"
-	echo "####################################################"
-	echo " -----------------------------------------------"
+	echo 
+	echo -e "----------Singbox一键安装vless+reality----------"
+        echo
 	echo -e "  ${GREEN}1.${PLAIN} 安装vless+reality"
-	echo " --------------------"
 	echo -e "  ${GREEN}2.${PLAIN} 更新SingBox"
-	echo -e "  ${GREEN}3.${PLAIN} ${RED}卸载SingBox${PLAIN}"
-	echo " --------------------"
+	echo -e "  ${GREEN}3.${PLAIN} 卸载SingBox "
 	echo -e "  ${GREEN}4.${PLAIN} 启动SingBox"
 	echo -e "  ${GREEN}5.${PLAIN} 重启SingBox"
 	echo -e "  ${GREEN}6.${PLAIN} 停止SingBox"
-	echo " --------------------"
 	echo -e "  ${GREEN}7.${PLAIN} 查看SingBox配置"
 	echo -e "  ${GREEN}8.${PLAIN} 查看SingBox日志"
-	echo " --------------------"
-	echo -e "  ${GREEN}0.${PLAIN}  退出"
+	echo -e "  ${GREEN}0.${PLAIN} 退出"
 	echo ""
 	echo -n " 当前状态："
 	statusText
