@@ -503,19 +503,19 @@ output() {
 	raw="${uuid}@${IP}:${port}?type=tcp&security=reality&fp=chrome&pbk=${pubkey}&sni=${sni}&flow=${flow}&sid=${sid}&spx=%2F#Vless+Reality+Vision"
 	link="vless://${raw}"
 
-	echo -e "   ${BLUE}协议: ${PLAIN} ${RED}vless${PLAIN}"
-	echo -e "   ${BLUE}IP(address): ${PLAIN} ${RED}${IP}${PLAIN}"
-	echo -e "   ${BLUE}端口(port)：${PLAIN} ${RED}${port}${PLAIN}"
-	echo -e "   ${BLUE}id(uuid)：${PLAIN} ${RED}${uuid}${PLAIN}"
-	echo -e "   ${BLUE}传输协议(network)：${PLAIN} ${RED}tcp${PLAIN}"
-	echo -e "   ${BLUE}流控(flow)：${PLAIN} ${RED}${flow}${PLAIN}"
-	echo -e "   ${BLUE}安全(security)：${PLAIN} ${RED}reality${PLAIN}"
-	echo -e "   ${BLUE}域名(sni)：${PLAIN} ${RED}${sni}${PLAIN}"
-	echo -e "   ${BLUE}短ID(shortid)：${PLAIN} ${RED}${sid}${PLAIN}"
-	echo -e "   ${BLUE}公钥(publickey)：${PLAIN} ${RED}${pubkey}${PLAIN}"
+	echo -e "   ${BLUE}协议: ${PLAIN} ${YELLOW}vless${PLAIN}"
+	echo -e "   ${BLUE}IP(address): ${PLAIN} ${YELLOW}${IP}${PLAIN}"
+	echo -e "   ${BLUE}端口(port)：${PLAIN} ${YELLOW}${port}${PLAIN}"
+	echo -e "   ${BLUE}id(uuid)：${PLAIN} ${YELLOW}${uuid}${PLAIN}"
+	echo -e "   ${BLUE}传输协议(network)：${PLAIN} ${YELLOW}tcp${PLAIN}"
+	echo -e "   ${BLUE}流控(flow)：${PLAIN} ${YELLOW}${flow}${PLAIN}"
+	echo -e "   ${BLUE}安全(security)：${PLAIN} ${YELLOW}reality${PLAIN}"
+	echo -e "   ${BLUE}域名(sni)：${PLAIN} ${YELLOW}${sni}${PLAIN}"
+	echo -e "   ${BLUE}短ID(shortid)：${PLAIN} ${YELLOW}${sid}${PLAIN}"
+	echo -e "   ${BLUE}公钥(publickey)：${PLAIN} ${YELLOW}${pubkey}${PLAIN}"
 	echo ""
-	echo -e "   ${BLUE}Vless链接:${PLAIN} $RED$link$PLAIN"
- 	echo -e "   ${BLUE}ClashMeta文件:${PLAIN} $RED${CONFIG_CLASH}$PLAIN"
+	echo -e "   ${BLUE}Vless链接:${PLAIN} $YELLOW$link$PLAIN"
+ 	echo -e "   ${BLUE}ClashMeta文件:${PLAIN} $YELLOW${CONFIG_CLASH}$PLAIN"
 }
 
 showInfo() {
@@ -528,7 +528,7 @@ showInfo() {
 	echo ""
 	echo -n -e " ${BLUE}SingBox运行状态：${PLAIN}"
 	statusText
-	echo -e " ${BLUE}SingBox配置文件: ${PLAIN} ${RED}${CONFIG_FILE}${PLAIN}"
+	echo -e " ${BLUE}SingBox配置文件: ${PLAIN} ${YELLOW}${CONFIG_FILE}${PLAIN}"
 	colorEcho $BLUE " SingBox配置信息："
 
 	getConfigFileInfo
