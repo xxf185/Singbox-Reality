@@ -359,7 +359,7 @@ configSingBox() {
 EOF
 
 	cat > /usr/local/etc/sing-box/clash.yaml << EOF
-- name: Vless+Reality+Vision
+- name: reality
   type: vless
   server: $IP
   port: $PORT
@@ -500,7 +500,7 @@ getConfigFileInfo() {
 }
 
 output() {
-	raw="${uuid}@${IP}:${port}?type=tcp&security=reality&fp=chrome&pbk=${pubkey}&sni=${sni}&flow=${flow}&sid=${sid}&spx=%2F#Vless+Reality"
+	raw="${uuid}@${IP}:${port}?type=tcp&security=reality&fp=chrome&pbk=${pubkey}&sni=${sni}&flow=${flow}&sid=${sid}&spx=%2F#reality"
 	link="vless://${raw}"
 
 	echo -e "   ${BLUE}协议: ${PLAIN} ${YELLOW}vless${PLAIN}"
