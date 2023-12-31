@@ -8,7 +8,6 @@ YELLOW="\033[33m"
 BLUE="\033[36m"
 PLAIN='\033[0m'
 
-sudo echo > /usr/local/etc/sing-box/config.json
 CONFIG_FILE="/usr/local/etc/sing-box/config.json"
 CONFIG_CLASH="/usr/local/etc/sing-box/clash.yaml"
 OS=`hostnamectl | grep -i system | cut -d: -f2`
@@ -16,9 +15,9 @@ OS=`hostnamectl | grep -i system | cut -d: -f2`
 IP=`curl -sL -4 ip.sb`
 
 domains=(
-one-piece.com
-www.samsung.com
-www.amd.com
+gateway.icloud.com
+www.microsoft.com
+mp.weixin.qq.com
 自定义域名
 )
 
