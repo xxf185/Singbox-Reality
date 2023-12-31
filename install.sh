@@ -264,7 +264,7 @@ installSingBox() {
 	mkdir -p /usr/local/etc/sing-box /usr/local/share/sing-box && \
 	tar -xvf /tmp/sing-box/sing-box.tar.gz -C /tmp/sing-box
 	cp /tmp/sing-box/sing-box-${NEW_VER}-linux-${ARCH}/sing-box /usr/local/bin
-	chmod +x /usr/local/bin/sing-box || {
+	chmod +x /usr/local/bin/sing-box/config.json || {
 	colorEcho $RED " SingBox安装失败"
 	exit 1
 	}
