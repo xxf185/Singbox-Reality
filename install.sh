@@ -8,10 +8,9 @@ YELLOW="\033[33m"
 BLUE="\033[36m"
 PLAIN='\033[0m'
 
-CONFIG_FILE=/usr/local/etc/sing-box/config.json
-CONFIG_CLASH=/usr/local/etc/sing-box/clash.yaml
+CONFIG_FILE="/usr/local/etc/sing-box/config.json"
+CONFIG_CLASH="/usr/local/etc/sing-box/clash.yaml"
 OS=`hostnamectl | grep -i system | cut -d: -f2`
-sudo chmod 777 /usr/local/etc/sing-box/config.json
 
 IP=`curl -sL -4 ip.sb`
 
