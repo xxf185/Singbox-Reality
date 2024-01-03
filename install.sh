@@ -8,7 +8,7 @@ YELLOW="\033[33m"
 BLUE="\033[36m"
 PLAIN='\033[0m'
 
-CONFIG_FILE="/etc/sing-box/config.json"
+CONFIG_FILE="/usr/local/etc/sing-box/config.json"
 CONFIG_CLASH="/usr/local/etc/sing-box/clash.yaml"
 OS=`hostnamectl | grep -i system | cut -d: -f2`
 
@@ -252,17 +252,17 @@ installSingBox() {
 	archAffix
 	rm -rf /tmp/sing-box
 	mkdir -p /tmp/sing-box
-	DOWNLOAD_LINK="https://github.com/xxf185/sing-box/releases/download/${NEW_VER_V}/sing-box-${NEW_VER}_linux_${ARCH}.deb"
+	DOWNLOAD_LINK="https://github.com/xxf185/sing-box/releases/download/${NEW_VER_V}/sing-box-${NEW_VER}-linux-${ARCH}.tar.gz"
 	colorEcho $BLUE " 下载SingBox: ${DOWNLOAD_LINK}"
-	wget -O /tmp/sing-box/sing-box.deb ${DOWNLOAD_LINK}
+	wget -O /tmp/sing-box/sing-box.tar.gz ${DOWNLOAD_LINK}
 	if [ $? != 0 ];then
 		colorEcho $RED " 下载SingBox文件失败，请检查服务器网络设置"
 		exit 1
 	fi
 	systemctl stop sing-box
 	mkdir -p /usr/local/etc/sing-box /usr/local/share/sing-box && \
-	tar -xvf /tmp/sing-box/sing-box.deb -C /tmp/sing-box
-	cp /tmp/sing-box/sing-box-${NEW_VER}_linux_${ARCH}/sing-box /usr/local/bin
+	tar -xvf /tmp/sing-box/sing-box.tar.gz -C /tmp/sing-box
+	cp /tmp/sing-box/sing-box-${NEW_VER}-linux-${ARCH}/sing-box /usr/local/bin
 	chmod +x /usr/local/bin/sing-box || {
 	colorEcho $RED " SingBox安装失败"
 	exit 1
@@ -298,7 +298,7 @@ configSingBox() {
 	private_key=$(echo $keys | awk -F " " '{print $2}')
 	public_key=$(echo $keys | awk -F " " '{print $4}')
 
-	cat > /etc/sing-box/config.json << EOF
+	cat > /usr/local/etc/sing-box/config.json << EOF
 {
     "log": {
         "level": "trace",
