@@ -252,7 +252,7 @@ installSingBox() {
 	archAffix
 	rm -rf /tmp/sing-box
 	mkdir -p /tmp/sing-box
-	DOWNLOAD_LINK="https://github.com/xxf185/sing-box/releases/download/${NEW_VER_V}/sing-box-${NEW_VER}-linux-${ARCH}.deb"
+	DOWNLOAD_LINK="https://github.com/xxf185/sing-box/releases/download/${NEW_VER_V}/sing-box-${NEW_VER}_linux_${ARCH}.deb"
 	colorEcho $BLUE " 下载SingBox: ${DOWNLOAD_LINK}"
 	wget -O /tmp/sing-box/sing-box.deb ${DOWNLOAD_LINK}
 	if [ $? != 0 ];then
@@ -262,7 +262,7 @@ installSingBox() {
 	systemctl stop sing-box
 	mkdir -p /usr/local/etc/sing-box /usr/local/share/sing-box && \
 	tar -xvf /tmp/sing-box/sing-box.deb -C /tmp/sing-box
-	cp /tmp/sing-box/sing-box-${NEW_VER}-linux-${ARCH}/sing-box /usr/local/bin
+	cp /tmp/sing-box/sing-box-${NEW_VER}_linux_${ARCH}/sing-box /usr/local/bin
 	chmod +x /usr/local/bin/sing-box || {
 	colorEcho $RED " SingBox安装失败"
 	exit 1
