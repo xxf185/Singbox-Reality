@@ -8,7 +8,7 @@ YELLOW="\033[33m"
 BLUE="\033[36m"
 PLAIN='\033[0m'
 
-CONFIG_FILE="/usr/local/etc/sing-box/config.json"
+CONFIG_FILE="/etc/sing-box/config.json"
 CONFIG_CLASH="/usr/local/etc/sing-box/clash.yaml"
 OS=`hostnamectl | grep -i system | cut -d: -f2`
 
@@ -298,7 +298,7 @@ configSingBox() {
 	private_key=$(echo $keys | awk -F " " '{print $2}')
 	public_key=$(echo $keys | awk -F " " '{print $4}')
 
-	cat > /usr/local/etc/sing-box/config.json << EOF
+	cat > /etc/sing-box/config.json << EOF
 {
     "log": {
         "level": "trace",
