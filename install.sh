@@ -546,7 +546,7 @@ showLog() {
 menu() {
 	clear
 	echo 
-	echo -e "----------Singbox一键安装vless+reality----------"
+	echo -e "${YELLOW}----------Singbox一键安装vless+reality----------${PLAIN}"
         echo
 	echo -e "  ${YELLOW}1. 安装reality${PLAIN}"
 	echo -e "  ${YELLOW}2. 更新SingBox${PLAIN}"
