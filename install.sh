@@ -133,7 +133,7 @@ getVersion() {
     VER=v`/usr/local/bin/sing-box version|head -n1 | awk '{print $3}'`
     RETVAL=$?
     CUR_VER="$(normalizeVersion "$(echo "$VER" | head -n 1 | cut -d " " -f2)")"
-    TAG_URL="https://api.github.com/repos/SagerNet/sing-box/releases/latest"
+    TAG_URL="https://api.github.com/repos/xxf185/sing-box/releases/latest"
     NEW_VER_V="$(normalizeVersion "$(curl -s "${TAG_URL}" --connect-timeout 10| grep -Eo '\"tag_name\"(.*?)\",' | cut -d\" -f4)")"
 	NEW_VER=`curl -s "${TAG_URL}" --connect-timeout 10| grep -Eo '\"tag_name\"(.*?)\",' | cut -d\" -f4 | awk -F 'v' '{print $2}'`
 
@@ -252,7 +252,7 @@ installSingBox() {
 	archAffix
 	rm -rf /tmp/sing-box
 	mkdir -p /tmp/sing-box
-	DOWNLOAD_LINK="https://github.com/SagerNet/sing-box/releases/download/${NEW_VER_V}/sing-box-${NEW_VER}-linux-${ARCH}.tar.gz"
+	DOWNLOAD_LINK="https://github.com/xxf185/sing-box/releases/download/${NEW_VER_V}/sing-box-${NEW_VER}-linux-${ARCH}.tar.gz"
 	colorEcho $BLUE " 下载SingBox: ${DOWNLOAD_LINK}"
 	wget -O /tmp/sing-box/sing-box.tar.gz ${DOWNLOAD_LINK}
 	if [ $? != 0 ];then
@@ -271,7 +271,7 @@ installSingBox() {
 	cat >/etc/systemd/system/sing-box.service<<-EOF
 [Unit]
 Description=sing-box Service
-Documentation=https://sing-box.sagernet.org/
+Documentation=https://sing-box.xxf185.org/
 After=network.target nss-lookup.target
 Wants=network.target
 
