@@ -16,6 +16,9 @@ IP=`curl -sL -4 ip.sb`
 
 domains=(
 dash.cloudflare.com
+www.ebay.com
+one-piece.com
+www.cloudflare.com
 )
 
 checkSystem() {
