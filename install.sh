@@ -15,9 +15,7 @@ OS=`hostnamectl | grep -i system | cut -d: -f2`
 IP=`curl -sL -4 ip.sb`
 
 domains=(
-one-piece.com
-www.samsung.com
-www.amd.com
+www.ebay.com
 )
 
 checkSystem() {
