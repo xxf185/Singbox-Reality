@@ -15,7 +15,7 @@ OS=`hostnamectl | grep -i system | cut -d: -f2`
 IP=`curl -sL -4 ip.sb`
 
 domains=(
-www.ebay.com
+dash.cloudflare.com
 )
 
 checkSystem() {
