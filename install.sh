@@ -15,8 +15,8 @@ OS=`hostnamectl | grep -i system | cut -d: -f2`
 IP=`curl -sL -4 ip.sb`
 
 domains=(
-dash.cloudflare.com
 www.ebay.com
+dash.cloudflare.com
 one-piece.com
 )
 
