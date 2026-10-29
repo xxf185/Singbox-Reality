@@ -252,7 +252,7 @@ installSingBox() {
 	archAffix
 	rm -rf /tmp/sing-box
 	mkdir -p /tmp/sing-box
-	DOWNLOAD_LINK="https://github.com/xxf185/singbox/releases/download/${NEW_VER_V}/sing-box-${NEW_VER}-linux-${ARCH}.tar.gz"
+	DOWNLOAD_LINK="https://github.com/xxf185/sing-box/releases/download/${NEW_VER_V}/sing-box-${NEW_VER}-linux-${ARCH}.tar.gz"
 	colorEcho $BLUE " 下载SingBox: ${DOWNLOAD_LINK}"
 	wget -O /tmp/sing-box/sing-box.tar.gz ${DOWNLOAD_LINK}
 	if [ $? != 0 ];then
